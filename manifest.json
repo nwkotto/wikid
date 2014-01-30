@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "version": "0.0.0.1",
+  "name": "Wikid",
+  "description": "Wikification.",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "wikid.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "http://access.alchemyapi.com/calls/",
+    "http://en.wikipedia.org/w/api.php",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "css": [],
+      "js": ["wikid.js"]
+    }
+  ]
+}
